@@ -1,0 +1,17 @@
+.DS_Store
+.metadata/*
+Servers/*
+test/*
+lib/
+.classpath
+.project
+.settings/
+dafenba_maven/
+node_modules/
+bower_components/
+dafenba*/bin
+*.pid
+target/
+*.log
+*.iml
+.idea
