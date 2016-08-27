@@ -8,7 +8,9 @@ import top.sourcecode.winter.entity.User;
 
 import javax.annotation.Resource;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  * Created by mountain on 7/24/16.
@@ -19,11 +21,25 @@ public class UserDAOTest extends BaseTest {
     private UserDAO userDAO;
 
     @Test
-    public void testUserDAO() throws ParseException {
+    public void testPageable() throws ParseException {
         Pageable pageable = new PageRequest(0,2);
         Iterator<User> iterator = userDAO.findAll(pageable).iterator();
         while (iterator.hasNext()) {
             System.out.println(iterator.next().getUsername());
         }
+    }
+
+    @Test
+    public void testSaveUsers() {
+        List<User> list = new ArrayList<>();
+        for(int i = 0; i < 1; ++i) {
+            User user = new User();
+            user.setUsername("test" + i);
+            user.setPassword("haha");
+            list.add(user);
+            userDAO.save(user);
+            userDAO.s
+        }
+        //userDAO.save(list);
     }
 }
